@@ -5,8 +5,8 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
   template: `
     <input class="todo-input"
      #inputElementRef
-           [value]="title"
-           (keyup.enter)="submitValue($event.target.value)">
+            placeholder="{{title}}"
+            (keyup.enter)="submitValue($event.target.value)">
 
     <button  class="btn" (click)="submitValue(inputElementRef.value)">
       Save
@@ -15,7 +15,7 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
   styleUrls: ['./input-button-unit.component.css']
 })
 export class InputButtonUnitComponent implements OnInit {
-  title = 'Hello World';
+  title = 'Add anything you want';
   @Output() submit: EventEmitter<string> = new EventEmitter();
 
   constructor() { }
