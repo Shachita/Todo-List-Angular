@@ -11,7 +11,7 @@ export class TodoItemComponent implements OnInit {
   @Output() remove: EventEmitter<TodoItem> = new EventEmitter(); 
   @Output() update: EventEmitter<any> = new EventEmitter();
   private function ='default';
-  private value: boolean;
+  private editable : boolean = false;
 
 
 removeItem()
@@ -32,7 +32,7 @@ removeItem()
   }
   editItem()
   {
-    this.value="true";
+    this.editable=true;
   }
   editType()
   {

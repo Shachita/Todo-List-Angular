@@ -5,9 +5,10 @@
              class="todo-checkbox"
              [(ngModel)]="item.completed"
              (click)="completeItem()"/>
-             <span contenteditable="">
+             <span  *ngIf="!editable">
        {{item.title}}
              </span>
+             <input type="text" [(ngModel)]="item.title" *ngIf="editable"/>
         
 
 
@@ -15,12 +16,11 @@
              
         </span>
         
-  <!--        
-  <button type="btn" (click)="editItem()">
-    Edit
       
-
-    </button>-->
+  <button type="btn"   (click)="editable=!editable">
+    {{editable ? "Save" : "Edit"}}
+  </button>
+  
 
       <button class="btn btn-red" (click)="removeItem()">
         remove
