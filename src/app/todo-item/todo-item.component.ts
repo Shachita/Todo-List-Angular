@@ -30,14 +30,8 @@ removeItem()
     });
     
   }
-  editItem()
-  {
-    this.editable=true;
-  }
-  editType()
-  {
-
-  }
+  
+  
 
 
   
