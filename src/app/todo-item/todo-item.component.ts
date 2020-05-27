@@ -10,6 +10,8 @@ export class TodoItemComponent implements OnInit {
   @Input() item : TodoItem;
   @Output() remove: EventEmitter<TodoItem> = new EventEmitter(); 
   @Output() update: EventEmitter<any> = new EventEmitter();
+  private function ='default';
+  private value: boolean;
 
 
 removeItem()
@@ -26,6 +28,21 @@ removeItem()
       item: this.item,
       changes: {completed: !this.item.completed}
     });
+    
   }
+  editItem()
+  {
+    this.value="true";
+  }
+  editType()
+  {
+
+  }
+
+
+  
+  
+  
+  
 
 }
